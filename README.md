@@ -14,7 +14,6 @@ catch also the information of the account.
     - [Installation](#installation)
 - [Linting and Checks](#linting-and-checks)
 - [Tests](#tests)
-- [Configuration](#configuration)
 
 ## Getting Started
 
@@ -30,7 +29,9 @@ python scan.py upwork
 
 Execute the next command on your terminal
 
-`git clone https://github.com/Alfareiza/scrap-up-work-com.git`
+```bash
+git clone https://github.com/Alfareiza/scrap-up-work-com.git
+```
 
 #### 2. Isolate the environment
 
