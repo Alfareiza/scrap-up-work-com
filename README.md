@@ -43,7 +43,7 @@ Go toward this folder using the terminal :
 cd scrap-up-work-com
 ```
 
-And execute:
+Make sure you have python 3.11 installed and execute:
 
 ```bash
 python -m venv .venv
