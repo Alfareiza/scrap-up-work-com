@@ -291,7 +291,9 @@ class UpWorkScanner(BaseSelenium, Scanner):
         :param html_content: String which depicts the content of a site.
         :return: BeautifulSoup instance with the html data.
         """
-        filepath = BASE_DIR / 'files' / f'upwork_{name_page}.html'
+        folder = BASE_DIR / 'files'
+        folder.mkdir(exist_ok=True)
+        filepath = folder / f'upwork_{name_page}.html'
         log.info(f'Creating file {filepath.name}')
         filepath.touch()
         filepath.write_text(html_content)
