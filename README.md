@@ -4,6 +4,10 @@
 <img alt="GitHub followers" src="https://img.shields.io/github/followers/Alfareiza?label=Follow%20me%20%3A%29&style=social">
 </h2>
 
+<h1 align="center" >
+    <img src="resources/output_cli.gif">
+</h1>
+
 This scrapper/scanner logs into a Upwork account using selenium for the login process, catches all the jobs which are in the main page through a local file created with python and consumed with BeautifoulSoup. Then it navigates to the profile page with selenium, extracts certain information about the profile owner using BeautifoulSoup. Finally, I used pydantic to model the  scrapped data and export it into a JSON file.
 
 I also used mypy, flake8 and pytest for checks, linting and testing, besides of typer to facilitate easy and expandable interaction with the CLI.
