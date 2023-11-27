@@ -6,9 +6,23 @@ from resources.models import (
     JobsSchemaList,
     ProfileSchema,
 )
+from settings import BASE_DIR
+from utils.file_utils import remove_folder
 
 
 class TestParserHtml:
+    def test_prepare_data_files_folder_when_doesnt_exists(self, upwork_scanner):
+        """Test the pre"""
+        folder_files = BASE_DIR / 'files'
+        if folder_files.exists():
+            remove_folder(folder_files)
+
+        soup = upwork_scanner.prepare_data('this is the html content', 'foo_page')
+        try:
+            assert soup
+        finally:
+            remove_folder(folder_files)
+
     def test_type_return_prepare_data(self, jobs_page):
         """Test instance of prepare data is a BeautifulSoup instance"""
         assert isinstance(jobs_page, BeautifulSoup)

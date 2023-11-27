@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from settings import BASE_DIR, log
 
 
@@ -16,3 +18,14 @@ def export_json(data: str, filename: str) -> None:
         log.error(f"Exporting json file with data: {e}")
     else:
         log.info(f"File created with scanned data: {jsonfilepath}")
+
+
+def remove_folder(folder_path: Path) -> None:
+    """Remove a folder recursively"""
+    for file in folder_path.iterdir():
+        if not file.is_dir():
+            file.unlink()
+        else:
+            remove_folder(file)
+    else:
+        folder_path.rmdir()
