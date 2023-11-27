@@ -293,6 +293,7 @@ class UpWorkScanner(BaseSelenium, Scanner):
         """
         filepath = BASE_DIR / 'files' / f'upwork_{name_page}.html'
         log.info(f'Creating file {filepath.name}')
+        filepath.touch()
         filepath.write_text(html_content)
 
         with open(filepath) as file:
